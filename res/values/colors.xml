@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="click_false">#0b63ad</color>
+    <color name="bg_an">#9AA809</color>
+    <color name="click_ture">#2e7ec2</color>
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+    <color name="green">#0F7169</color>
+    <color name="gray">#666666</color>
+    <color name="c">#666666</color>
+    <color name="bg">#F1F0F2</color>
+    <color name="login_dialog_background">#00000000</color>
+    <color name="color_66">#666666</color>
+    <color name="color_01">#010101</color>
+    <color name="color_33">#333333</color>
+    <color name="color_b5">#b5b5b5</color>
+    <color name="color_93">#939393</color>
+    <color name="login_99">#999999</color>
+    <color name="myinfo_47">#474747</color>
+    <color name="myinfo_84">#848484</color>
+    <color name="shouye_yellow">#F6BC10</color>
+    <color name="shouye_green">#93B228</color>
+    <color name="shouye_fen">#AA266F</color>
+    <color name="shouye_red">#FF0000</color>
+    <color name="blue">#02D2C2</color>
+    <color name="top">#E2E3E5</color>
+    <color name="bottom">#E2E3E5</color>
+    <color name="background">#02D2C2</color>
+    <color name="background_an">#0aa89a</color>
+    <color name="transpot">#22000000</color>
+    <color name="yellow">#F39C06</color>
+    <color name="juyellow">#FFA305</color>
+    <color name="default_circle_indicator_fill_color">#FFA305</color>
+    <color name="default_circle_indicator_page_color">#ECEBEB</color>
+    <color name="default_circle_indicator_stroke_color">#00000000</color>
+    <color name="D1">#cccccc</color>
+
+    <drawable name="cao_qian">@color/white</drawable>
+    <drawable name="cao_hou">@color/background</drawable>
+    <drawable name="background">@color/background</drawable>
+    <drawable name="background_an">@color/background_an</drawable>
+    <drawable name="translate">@color/login_dialog_background</drawable>
+
+</resources>

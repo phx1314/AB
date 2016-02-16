@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="fill_parent" android:layout_height="fill_parent" android:gravity="center" android:orientation="vertical">
+
+    <com.mdx.framework.widget.MImageView android:id="@+id/mMImageView_top" android:layout_width="@dimen/j290dp" android:layout_height="@dimen/j30dp" android:layout_weight="1" android:scaleType="fitXY" android:src="@drawable/bg_tailibeimian"/>
+
+    <LinearLayout android:layout_width="match_parent" android:layout_height="@dimen/f0dp" android:layout_weight="1" android:gravity="center" android:orientation="vertical">
+
+        <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/bg_wcbj"/>
+
+        <TextView android:id="@+id/clk_mTextView_dzh" style="@style/text_style_15_white" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_gravity="center_horizontal" android:layout_marginTop="@dimen/j10dp" android:background="@drawable/bt_xzdg_n" android:gravity="center_horizontal" android:paddingTop="@dimen/j5dp" android:text="现在订购"/>
+    </LinearLayout>
+
+</LinearLayout>

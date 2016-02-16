@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.work.xuance"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="8"
+        android:targetSdkVersion="15" />
+
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.GET_TASKS" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_DOWNLOAD_MANAGER" />
+    <uses-permission android:name="android.permission.DOWNLOAD_WITHOUT_NOTIFICATION" />
+    <uses-permission android:name="android.permission.DISABLE_KEYGUARD" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.MANAGE_DOCUMENTS" />
+    <uses-permission android:name="android.permission.CAMERA" />
+
+    <uses-feature android:name="android.hardware.camera" />
+    <uses-feature android:name="android.hardware.camera.autofocus" />
+
+    <application
+        android:name="com.work.xuance.MyApplication"
+        android:icon="@drawable/icon"
+        android:label="@string/app_name" >
+
+        <!-- **************************************框架act 注册开始************************************************* -->
+        <activity
+            android:name="com.mdx.framework.activity.IndexAct"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:theme="@style/act" >
+        </activity>
+        <activity
+            android:name="com.mdx.framework.activity.LoadingAct"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:theme="@style/act" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.mdx.framework.activity.TitleAct"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:theme="@style/transparentact" >
+        </activity>
+        <activity
+            android:name="com.work.xuance.act.TitleActDf"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/app_name"
+            android:screenOrientation="landscape"
+            android:theme="@style/transparentact" >
+        </activity>
+        <!--  -->
+        <activity
+            android:name="com.mdx.framework.activity.TitleTransparentAct"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:theme="@style/transparentact" >
+        </activity>
+        <activity
+            android:name="com.mdx.framework.activity.NoTitleAct"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:theme="@style/transparentact"
+            android:windowSoftInputMode="adjustPan|stateHidden" >
+        </activity>
+        <activity
+            android:name="com.mdx.framework.activity.TitleTransStatusAct"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:theme="@style/transparentact" >
+        </activity>
+        <activity
+            android:name="com.mdx.framework.activity.PTitleAct"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/app_name"
+            android:process=":com.mdx.framework.process"
+            android:screenOrientation="portrait"
+            android:theme="@style/transparentact" >
+            <intent-filter>
+                <action android:name="com.mdx.framework.process" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <!--  -->
+        <activity
+            android:name="com.mdx.framework.activity.PTitleTransparentAct"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/app_name"
+            android:process=":com.mdx.framework.process"
+            android:screenOrientation="portrait"
+            android:theme="@style/transparentact" >
+            <intent-filter>
+                <action android:name="com.mdx.framework.process" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.mdx.framework.activity.PNoTitleAct"
+            android:label="@string/app_name"
+            android:process=":com.mdx.framework.process"
+            android:theme="@style/transparentact"
+            android:windowSoftInputMode="adjustPan|stateHidden" >
+            <intent-filter>
+                <action android:name="com.mdx.framework.process" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.mdx.framework.activity.PTitleTransStatusAct"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/app_name"
+            android:process=":com.mdx.framework.process"
+            android:screenOrientation="portrait"
+            android:theme="@style/transparentact" >
+            <intent-filter>
+                <action android:name="com.mdx.framework.process" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.mdx.framework.widget.getphoto.ActCameraStream"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/app_name"
+            android:process=":com.mdx.framework.process"
+            android:screenOrientation="portrait"
+            android:theme="@style/transparentact" >
+            <intent-filter>
+                <action android:name="com.mdx.framework.process" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.mdx.framework.activity.CameraActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:excludeFromRecents="true"
+            android:process=":com.mdx.framework.process"
+            android:screenOrientation="portrait"
+            android:theme="@style/transparentact" >
+            <intent-filter>
+                <action android:name="com.mdx.framework.process" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <!-- 读取二维码 -->
+        <activity
+            android:name="com.mdx.framework.activity.DecodeCodeActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:excludeFromRecents="true"
+            android:screenOrientation="portrait"
+            android:theme="@style/transparentact" >
+        </activity>
+        <!-- **************************************框架act 注册结束 ************************************************* -->
+        <activity
+            android:name="com.work.xuance.debug.DebugAdaActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.work.xuance.act.BaseAct"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.work.xuance.frg.BaseFrg"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.work.xuance.item.BaseItem"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.work.xuance.dialog.BaseDia"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.work.xuance.debug.MimgAda"
+            android:screenOrientation="portrait" />
+        <!-- 支付宝 -->
+        <activity
+            android:name="com.alipay.android.app.sdk.WapPayActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/no_title_bar" >
+        </activity>
+        <activity
+            android:name="com.unionpay.uppay.PayActivity"
+            android:theme="@style/no_title_bar" >
+        </activity>
+        <activity
+            android:name="com.alipay.sdk.app.H5PayActivity"
+            android:configChanges="orientation|keyboardHidden|navigation"
+            android:exported="false"
+            android:screenOrientation="behind"
+            android:windowSoftInputMode="adjustResize|stateHidden" >
+        </activity>
+        <activity
+            android:name="com.alipay.sdk.auth.AuthActivity"
+            android:configChanges="orientation|keyboardHidden|navigation"
+            android:exported="false"
+            android:screenOrientation="behind" >
+        </activity>
+    </application>
+
+</manifest>

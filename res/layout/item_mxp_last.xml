@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="fill_parent" android:layout_height="fill_parent" android:orientation="vertical">
+
+    <LinearLayout android:layout_width="fill_parent" android:layout_height="fill_parent" android:background="@drawable/bg_wenli" android:orientation="horizontal">
+
+        <TextView style="@style/text_style_11_black" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/j5dp" android:layout_marginTop="@dimen/j17dp" android:text="背面样式："/>
+
+        <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/j2dp" android:layout_marginTop="@dimen/j17dp" android:orientation="vertical">
+
+            <LinearLayout android:id="@+id/clk_LinearLayout_style1" android:layout_width="wrap_content" android:layout_height="wrap_content" android:gravity="center" android:orientation="horizontal">
+
+                <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/ic_mxp1"/>
+
+                <ImageView android:id="@+id/mImageView_dui1" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/j2dp" android:src="@drawable/bg_gougou"/>
+
+                <TextView style="@style/text_style_11_black" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/j1dp" android:text="样式1"/>
+            </LinearLayout>
+
+            <LinearLayout android:id="@+id/clk_LinearLayout_style2" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/j10dp" android:gravity="center" android:orientation="horizontal">
+
+                <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/ic_mxp2"/>
+
+                <ImageView android:id="@+id/mImageView_dui2" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/j2dp" android:src="@drawable/bg_gougou" android:visibility="invisible"/>
+
+                <TextView style="@style/text_style_11_black" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/j1dp" android:text="样式2"/>
+            </LinearLayout>
+        </LinearLayout>
+
+        <ImageView android:id="@+id/mImageView_center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/j12dp" android:layout_marginTop="@dimen/j30dp" android:src="@drawable/bg_mxp1"/>
+
+        <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent" android:layout_margin="@dimen/j10dp" android:gravity="center" android:orientation="vertical">
+
+            <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/bg_wcbj"/>
+
+            <TextView android:id="@+id/clk_mTextView_dzh" style="@style/text_style_13_white" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_gravity="center_horizontal" android:layout_marginTop="@dimen/j10dp" android:background="@drawable/bt_xzdg_n" android:gravity="center_horizontal" android:paddingTop="@dimen/j8dp" android:text="现在订购"/>
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

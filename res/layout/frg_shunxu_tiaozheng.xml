@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical">
+
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_weight="1" android:background="@drawable/bg_wenli" android:gravity="center" android:orientation="horizontal" android:padding="@dimen/j10dp">
+
+        <com.work.xuance.view.DragGridView android:id="@+id/dragGridView" android:layout_width="match_parent" android:layout_height="match_parent" android:background="#00000000" android:cacheColorHint="@android:color/transparent" android:gravity="center" android:horizontalSpacing="@dimen/j3dp" android:listSelector="@android:color/transparent" android:numColumns="7" android:stretchMode="columnWidth" android:verticalSpacing="@dimen/j11dp"/>
+    </LinearLayout>
+
+    <LinearLayout android:id="@+id/mLinearLayout_bottom" android:layout_width="fill_parent" android:layout_height="wrap_content" android:orientation="horizontal">
+
+        <LinearLayout android:id="@+id/clk_left" android:layout_width="@dimen/f0dp" android:layout_height="wrap_content" android:layout_weight="1" android:background="@drawable/bg_tabxuanzhong" android:gravity="center">
+
+            <TextView style="@style/text_style_13_white" android:layout_width="wrap_content" android:layout_height="match_parent" android:drawablePadding="@dimen/j8dp" android:gravity="center" android:text="随机"/>
+        </LinearLayout>
+
+        <ImageView android:layout_width="1px" android:layout_height="match_parent" android:background="#2e2e2e"/>
+
+        <LinearLayout android:id="@+id/clk_right" android:layout_width="@dimen/f0dp" android:layout_height="wrap_content" android:layout_weight="1" android:background="@drawable/bg_tab" android:gravity="center">
+
+            <TextView style="@style/text_style_13_white" android:layout_width="wrap_content" android:layout_height="match_parent" android:drawableLeft="@drawable/bt_ymtz_n" android:drawablePadding="@dimen/j8dp" android:gravity="center" android:text="复位"/>
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

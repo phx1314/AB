@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="fill_parent" android:layout_height="fill_parent" android:orientation="vertical">
+
+    <com.work.xuance.item.Headlayout android:id="@+id/mHeadlayout" android:layout_width="fill_parent" android:layout_height="wrap_content"/>
+
+    <com.mdx.framework.widget.MPageListView android:id="@+id/mMPageListView" android:layout_width="fill_parent" android:layout_height="fill_parent" android:cacheColorHint="#00000000" android:divider="#00000000" android:fadingEdge="none"/>
+
+</LinearLayout>

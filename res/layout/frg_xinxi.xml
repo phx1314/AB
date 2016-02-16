@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/bg_bg"
+    android:gravity="right|center_vertical"
+    android:orientation="vertical" >
+
+    <com.work.xuance.item.Headlayout
+        android:id="@+id/mHeadlayout"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/j10dp"
+        android:background="@drawable/bg_xinxi"
+        android:orientation="vertical" >
+
+        <TextView
+            style="@style/text_style_15_black"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/j18dp"
+            android:layout_marginTop="@dimen/j26dp"
+            android:drawableLeft="@drawable/ic_lxwm"
+            android:drawablePadding="@dimen/j5dp"
+            android:text="联系我们" />
+
+        <TextView
+            android:id="@+id/mTextView_phone"
+            style="@style/text_style_13_black"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/j39dp"
+            android:layout_marginTop="@dimen/j20dp"
+            android:drawablePadding="@dimen/j5dp" />
+
+        <TextView
+            android:id="@+id/mTextView_email"
+            style="@style/text_style_13_black"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/j39dp"
+            android:layout_marginTop="@dimen/j10dp"
+            android:drawablePadding="@dimen/j5dp" />
+
+        <TextView
+            android:id="@+id/mTextView_weixin"
+            style="@style/text_style_13_black"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/j39dp"
+            android:layout_marginTop="@dimen/j10dp"
+            android:drawablePadding="@dimen/j5dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:layout_marginLeft="@dimen/j18dp"
+            android:layout_marginRight="@dimen/j18dp"
+            android:layout_marginTop="@dimen/j23dp"
+            android:background="#000000" />
+
+        <TextView
+            style="@style/text_style_15_black"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/j18dp"
+            android:layout_marginTop="@dimen/j26dp"
+            android:drawableLeft="@drawable/ic_fhsm"
+            android:drawablePadding="@dimen/j5dp"
+            android:text="发货说明" />
+
+        <TextView
+            style="@style/text_style_13_black"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/j39dp"
+            android:layout_marginRight="@dimen/j39dp"
+            android:layout_marginTop="@dimen/j20dp"
+            android:drawablePadding="@dimen/j5dp"
+            android:text="我们承诺订单成功上传后将在5个工作日安排发货" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:layout_marginLeft="@dimen/j18dp"
+            android:layout_marginRight="@dimen/j18dp"
+            android:layout_marginTop="@dimen/j23dp"
+            android:background="#000000" />
+
+        <TextView
+            style="@style/text_style_15_white"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/j11dp"
+            android:background="@drawable/bt_pingji_n"
+            android:gravity="center"
+            android:text="App Store评级和评论" />
+
+        <TextView
+            android:id="@+id/mTextView_verson"
+            style="@style/text_style_13_black"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/j7dp"
+            android:text="当前版本：1.6.3" />
+    </LinearLayout>
+
+</LinearLayout>

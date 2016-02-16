@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools" android:id="@+id/mRelativeLayout" android:layout_width="match_parent" android:layout_height="@dimen/j44dp" android:background="@drawable/bg_ztl">
+
+    <RelativeLayout android:layout_width="match_parent" android:layout_height="match_parent">
+
+        <LinearLayout android:id="@+id/mLinearLayout_back" android:layout_width="@dimen/j60dp" android:layout_height="match_parent" android:layout_alignParentLeft="true" android:layout_centerVertical="true" android:background="#00000000" android:gravity="center_vertical" android:padding="@dimen/j8dp">
+
+            <ImageButton android:id="@+id/btn_left" style="@style/text_style_15_white" android:layout_width="@dimen/j25dp" android:layout_height="@dimen/j25dp" android:background="#00000000" android:drawablePadding="@dimen/j3dp" android:gravity="center" android:visibility="gone"/>
+        </LinearLayout>
+
+        <TextView android:id="@+id/tv_title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerInParent="true" android:layout_marginLeft="@dimen/j50dp" android:layout_marginRight="@dimen/j50dp" android:drawablePadding="@dimen/j2dp" android:ellipsize="end" android:gravity="center" android:singleLine="true" android:textColor="@color/white" android:textSize="16sp" android:textStyle="bold"/>
+
+        <ImageView android:id="@+id/mImageView" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerInParent="true" android:visibility="gone"/>
+
+        <ImageButton android:id="@+id/btn_right_2" android:layout_width="@dimen/j25dp" android:layout_height="@dimen/j25dp" android:layout_centerVertical="true" android:layout_marginRight="@dimen/j11dp" android:layout_toLeftOf="@+id/btn_right" android:background="#00000000" android:visibility="gone"/>
+
+        <ImageButton android:id="@+id/btn_right" style="@style/text_style_15_white" android:layout_width="wrap_content" android:layout_height="match_parent" android:layout_alignParentRight="true" android:layout_centerVertical="true" android:layout_marginRight="@dimen/j8dp" android:background="#00000000" android:drawablePadding="@dimen/j3dp" android:gravity="center" android:visibility="gone"/>
+
+        <TextView android:id="@+id/mTextView_right" style="@style/text_style_13_white" android:layout_width="wrap_content" android:layout_height="match_parent" android:drawablePadding="@dimen/j3dp" android:layout_alignParentRight="true" android:layout_centerVertical="true" android:gravity="center" android:paddingRight="@dimen/j11dp" android:visibility="gone"/>
+    </RelativeLayout>
+
+</RelativeLayout>

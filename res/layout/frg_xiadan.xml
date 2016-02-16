@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="fill_parent" android:layout_height="fill_parent" android:background="#f2f2f2" android:orientation="vertical">
+
+    <ImageView android:layout_width="fill_parent" android:layout_height="wrap_content" android:background="@drawable/bg_ztlyinying"/>
+
+    <TextView style="@style/text_style_15_white" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="@dimen/j5dp" android:layout_marginLeft="@dimen/j10dp" android:layout_marginRight="@dimen/j10dp" android:layout_marginTop="@dimen/j5dp" android:background="@drawable/bg_dgsl" android:gravity="center_horizontal" android:paddingTop="@dimen/j3dp" android:text="订购数量"/>
+
+    <ImageView android:layout_width="fill_parent" android:layout_height="1px" android:background="#cccccc"/>
+
+    <LinearLayout android:layout_width="fill_parent" android:layout_height="@dimen/j80dp" android:background="#ffffff" android:orientation="horizontal" android:padding="@dimen/j10dp">
+
+        <LinearLayout android:id="@+id/mLinearLayout_bg" android:layout_width="@dimen/j57dp" android:layout_height="@dimen/j62dp" android:background="@drawable/xiangce_bg" android:orientation="horizontal">
+
+            <com.mdx.framework.widget.MImageView android:id="@+id/mMImageView" android:layout_width="match_parent" android:layout_height="match_parent" android:layout_marginBottom="@dimen/j13dp" android:layout_marginLeft="@dimen/j3dp" android:layout_marginRight="@dimen/j3dp" android:layout_marginTop="@dimen/j15dp" android:scaleType="centerCrop" android:src="@drawable/default_avatar"/>
+        </LinearLayout>
+
+        <LinearLayout android:id="@+id/mLinearLayout_taili_bg" android:layout_width="@dimen/j57dp" android:layout_height="@dimen/j62dp" android:background="@drawable/bg_tailidd" android:orientation="horizontal" android:visibility="gone">
+
+            <com.mdx.framework.widget.MImageView android:id="@+id/mMImageView_taili" android:layout_width="match_parent" android:layout_height="match_parent" android:layout_marginBottom="@dimen/j15dp" android:layout_marginLeft="@dimen/j3dp" android:layout_marginRight="@dimen/j3dp" android:layout_marginTop="@dimen/j13dp" android:scaleType="centerCrop" android:src="@drawable/default_avatar"/>
+        </LinearLayout>
+
+        <LinearLayout android:id="@+id/mLinearLayout_mxp_bg" android:layout_width="@dimen/j57dp" android:layout_height="@dimen/j62dp" android:background="@drawable/bg_mxpdd" android:orientation="horizontal">
+
+            <com.mdx.framework.widget.MImageView android:id="@+id/mMImageView_mxp" android:layout_width="match_parent" android:layout_height="match_parent" android:layout_margin="@dimen/j2dp" android:scaleType="centerCrop" android:src="@drawable/default_avatar"/>
+        </LinearLayout>
+
+        <LinearLayout android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginLeft="@dimen/j12dp" android:orientation="vertical">
+
+            <LinearLayout android:layout_width="fill_parent" android:layout_height="wrap_content" android:orientation="horizontal">
+
+                <TextView style="@style/text_style_13_black" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_weight="1" android:text="数量"/>
+
+                <TextView style="@style/text_style_13_black" android:layout_width="@dimen/j70dp" android:layout_height="wrap_content" android:text="总价"/>
+            </LinearLayout>
+
+            <LinearLayout android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/j11dp" android:gravity="center_vertical" android:orientation="horizontal">
+
+                <RelativeLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_weight="1" android:orientation="horizontal">
+
+                    <ImageView android:id="@+id/mImageView_jian" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/bt_jian_d"/>
+
+                    <ImageView android:id="@+id/mImageView_line_top" android:layout_width="@dimen/j80dp" android:layout_height="1px" android:layout_alignTop="@+id/mImageView_jian" android:layout_toRightOf="@+id/mImageView_jian" android:background="#C1C1C1"/>
+
+                    <ImageView android:id="@+id/mImageView_line_bottom" android:layout_width="@dimen/j80dp" android:layout_height="1px" android:layout_alignBottom="@+id/mImageView_jian" android:layout_toRightOf="@+id/mImageView_jian" android:background="#C1C1C1"/>
+
+                    <ImageView android:id="@+id/mImageView_jia" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_toRightOf="@+id/mImageView_line_top" android:src="@drawable/bt_jia_n"/>
+
+                    <EditText android:id="@+id/mTextView_num" style="@style/text_style_13_black" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignBottom="@+id/mImageView_jian" android:layout_alignTop="@+id/mImageView_jian" android:layout_toLeftOf="@+id/mImageView_jia" android:layout_toRightOf="@+id/mImageView_jian" android:background="#00000000" android:enabled="false" android:gravity="center" android:inputType="number" android:maxLength="3" android:singleLine="true" android:text="1"/>
+                </RelativeLayout>
+
+                <LinearLayout android:layout_width="@dimen/j70dp" android:layout_height="wrap_content" android:orientation="horizontal">
+
+                    <TextView android:id="@+id/mTextView_allprice" style="@style/text_style_13_black" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="89.00"/>
+
+                    <TextView style="@style/text_style_11_black" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Rmb"/>
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+    <ImageView android:layout_width="fill_parent" android:layout_height="wrap_content" android:background="@drawable/bg_yinying"/>
+
+    <TextView style="@style/text_style_15_white" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="@dimen/j5dp" android:layout_marginLeft="@dimen/j10dp" android:layout_marginRight="@dimen/j10dp" android:layout_marginTop="@dimen/j5dp" android:background="@drawable/bg_dgsl" android:gravity="center_horizontal" android:paddingTop="@dimen/j3dp" android:text="送货地址 "/>
+
+    <ImageView android:layout_width="fill_parent" android:layout_height="1px" android:background="#cccccc"/>
+
+    <LinearLayout android:layout_width="fill_parent" android:layout_height="@dimen/j37dp" android:background="#ffffff" android:gravity="center_vertical" android:orientation="horizontal">
+
+        <TextView style="@style/text_style_13_black" android:layout_width="@dimen/j85dp" android:layout_height="fill_parent" android:gravity="center_vertical|right" android:paddingRight="@dimen/j2dp" android:text="收件人姓名："/>
+
+        <ImageView android:layout_width="1px" android:layout_height="match_parent" android:background="#cccccc"/>
+
+        <EditText android:id="@+id/mEditText_name" style="@style/text_style_13_black" android:layout_width="match_parent" android:layout_height="match_parent" android:background="#00000000" android:gravity="center_vertical" android:hint="请输入姓名" android:paddingLeft="@dimen/j8dp" android:singleLine="true"/>
+    </LinearLayout>
+
+    <ImageView android:layout_width="fill_parent" android:layout_height="1px" android:background="#cccccc"/>
+
+    <LinearLayout android:layout_width="fill_parent" android:layout_height="@dimen/j37dp" android:background="#ffffff" android:gravity="center_vertical" android:orientation="horizontal">
+
+        <TextView style="@style/text_style_13_black" android:layout_width="@dimen/j85dp" android:layout_height="fill_parent" android:gravity="center_vertical|right" android:paddingRight="@dimen/j2dp" android:text="手机号码："/>
+
+        <ImageView android:layout_width="1px" android:layout_height="match_parent" android:background="#cccccc"/>
+
+        <EditText android:id="@+id/mEditText_phone" style="@style/text_style_13_black" android:layout_width="match_parent" android:layout_height="match_parent" android:background="#00000000" android:gravity="center_vertical" android:hint="请输入手机号码" android:inputType="phone" android:paddingLeft="@dimen/j8dp" android:singleLine="true"/>
+    </LinearLayout>
+
+    <ImageView android:layout_width="fill_parent" android:layout_height="1px" android:background="#cccccc"/>
+
+    <LinearLayout android:layout_width="fill_parent" android:layout_height="@dimen/j37dp" android:background="#ffffff" android:gravity="center_vertical" android:orientation="horizontal">
+
+        <TextView style="@style/text_style_13_black" android:layout_width="@dimen/j85dp" android:layout_height="fill_parent" android:gravity="center_vertical|right" android:paddingRight="@dimen/j2dp" android:text="所在地区："/>
+
+        <ImageView android:layout_width="1px" android:layout_height="match_parent" android:background="#cccccc"/>
+
+        <EditText android:id="@+id/mEditText_address" style="@style/text_style_13_black" android:layout_width="match_parent" android:layout_height="match_parent" android:background="#00000000" android:editable="false" android:gravity="center_vertical" android:hint="请选择所在地区" android:paddingLeft="@dimen/j8dp" android:singleLine="true"/>
+    </LinearLayout>
+
+    <ImageView android:layout_width="fill_parent" android:layout_height="1px" android:background="#cccccc"/>
+
+    <LinearLayout android:layout_width="fill_parent" android:layout_height="@dimen/j37dp" android:background="#ffffff" android:gravity="center_vertical" android:orientation="horizontal">
+
+        <TextView style="@style/text_style_13_black" android:layout_width="@dimen/j85dp" android:layout_height="fill_parent" android:gravity="center_vertical|right" android:paddingRight="@dimen/j2dp" android:text="详细地址："/>
+
+        <ImageView android:layout_width="1px" android:layout_height="match_parent" android:background="#cccccc"/>
+
+        <EditText android:id="@+id/mEditText_xiangxidizhi" style="@style/text_style_13_black" android:layout_width="match_parent" android:layout_height="match_parent" android:background="#00000000" android:gravity="center_vertical" android:hint="请输入详细地址" android:paddingLeft="@dimen/j8dp" android:singleLine="true"/>
+    </LinearLayout>
+
+    <ImageView android:layout_width="fill_parent" android:layout_height="1px" android:background="#cccccc"/>
+
+    <LinearLayout android:layout_width="fill_parent" android:layout_height="@dimen/j74dp" android:background="#ffffff" android:gravity="center_vertical" android:orientation="horizontal">
+
+        <TextView style="@style/text_style_13_black" android:layout_width="@dimen/j85dp" android:layout_height="fill_parent" android:gravity="center_vertical|right" android:paddingRight="@dimen/j2dp" android:text="备注："/>
+
+        <ImageView android:layout_width="1px" android:layout_height="match_parent" android:background="#cccccc"/>
+
+        <EditText android:id="@+id/mEditText_remark" style="@style/text_style_13_black" android:layout_width="match_parent" android:layout_height="match_parent" android:background="#00000000" android:gravity="center_vertical|top" android:hint="留言备注" android:paddingLeft="@dimen/j8dp" android:singleLine="true"/>
+    </LinearLayout>
+
+    <ImageView android:layout_width="fill_parent" android:layout_height="wrap_content" android:background="@drawable/bg_yinying"/>
+
+    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_weight="1"/>
+
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:background="@drawable/bg_ddtab" android:gravity="center">
+
+        <TextView android:id="@+id/mTextView_sub" style="@style/text_style_15_white" android:layout_width="wrap_content" android:layout_height="wrap_content" android:background="@drawable/bt_tjdd_n" android:gravity="center" android:text="提交订单"/>
+    </LinearLayout>
+
+</LinearLayout>

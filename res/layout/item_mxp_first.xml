@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:background="@drawable/bg_wenli"
+        android:orientation="horizontal" >
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/j30dp"
+            android:layout_marginTop="@dimen/j80dp"
+            android:src="@drawable/bg_hdqhzp" />
+
+        <RelativeLayout
+            android:layout_width="@dimen/j285dp"
+            android:layout_height="@dimen/j180dp"
+            android:layout_marginLeft="@dimen/j20dp"
+            android:layout_marginTop="@dimen/j30dp"
+            android:background="@drawable/bg_mxppage"
+            android:padding="@dimen/j10dp" >
+
+            <com.mdx.framework.widget.MImageView
+                android:id="@+id/mImageView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_centerInParent="true"
+                android:scaleType="fitCenter"
+                android:src="@drawable/default_image" />
+
+            <EditText
+                android:id="@+id/mEditText"
+                style="@style/text_style_13_white"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_margin="@dimen/j5dp"
+                android:background="@drawable/bg_neiye"
+                android:enabled="false"
+                android:gravity="right|center_vertical"
+                android:hint="请输入"
+                android:padding="@dimen/j3dp" />
+        </RelativeLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/mLinearLayout_bianji"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_tab"
+        android:gravity="center" >
+
+        <TextView
+            style="@style/text_style_13_white"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@drawable/bt_bjby_n"
+            android:drawablePadding="@dimen/j5dp"
+            android:gravity="center"
+            android:text="编辑本页" />
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Apis>
+  <Api Package="com.udows.common.proto" Name="xc" ApiUrl="/mobile?methodno=">
+    <!--上传文件(需要登录)-->
+    <Url name="MUploadFile" type="21" errorType="0" cacheTime="1" className=".MRet">MUploadFile</Url>
+    <!--用户反馈-->
+    <Url name="MFeedback" type="21" errorType="0" cacheTime="1" className=".MRet">MFeedback</Url>
+    <!--获取系统常量-->
+    <Url name="MSysParams" type="21" errorType="0" cacheTime="1" className=".MSysParams">MSysParams</Url>
+    <!--获取单个系统常量-->
+    <Url name="MSingleSysParams" type="21" errorType="0" cacheTime="1" className=".MRet">MSingleSysParams</Url>
+    <!--系统页面-->
+    <Url name="MSinglePage" type="21" errorType="0" cacheTime="1" className=".MAboutList">MSinglePage</Url>
+    <!--登录-->
+    <Url name="MLogin" type="21" errorType="0" cacheTime="1" className=".MAccount">MLogin</Url>
+    <!--进入付款(需要登录)-->
+    <Url name="MToPay" type="21" errorType="0" cacheTime="1" className=".MRet">MToPay</Url>
+    <!--生成订单-->
+    <Url name="MPostPhotoOrder" type="21" errorType="0" cacheTime="1" className=".MRet">MPostPhotoOrder</Url>
+    <!--预览-->
+    <Url name="MOrderDetail" type="21" errorType="0" cacheTime="1" className=".MPhotoList">MOrderDetail</Url>
+    <!--订单详情-->
+    <Url name="MOrderInfo" type="21" errorType="0" cacheTime="1" className=".MOrderMini">MOrderInfo</Url>
+    <!--订单列表 分页-->
+    <Url name="MOrderList" type="21" errorType="0" cacheTime="1" className=".MOrderList">MOrderList</Url>
+    <!--使用优惠券  -->
+    <Url name="MCouponCode" type="21" errorType="0" cacheTime="1" className=".MRet">MCouponCode</Url>
+    <!--支付为0 调用接口-->
+    <Url name="MFinishPay" type="21" errorType="0" cacheTime="1" className=".MRet">MFinishPay</Url>
+    <!--获取模版-->
+    <Url name="MTemplate" type="21" errorType="0" cacheTime="1" className=".MPhotoList">MTemplate</Url>
+    <!--修改订单(需要登录)-->
+    <Url name="MUpdateOrder" type="21" errorType="0" cacheTime="1" className=".MRet">MUpdateOrder</Url>
+  </Api>
+</Apis>

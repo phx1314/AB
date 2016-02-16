@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent" android:layout_height="match_parent">
+
+    <RelativeLayout android:layout_width="@dimen/j75dp" android:layout_height="@dimen/j70dp" android:layout_centerInParent="true" android:background="#ffffff">
+
+        <com.mdx.framework.widget.MImageView android:id="@+id/mMImageView" android:layout_width="@dimen/j65dp" android:layout_height="@dimen/j43dp" android:layout_centerInParent="true" android:scaleType="centerCrop" android:src="@drawable/default_image"/>
+
+        <ImageView android:id="@+id/mImageView_left" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/bg_blue"/>
+
+        <ImageView android:id="@+id/mImageView_right" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignParentBottom="true" android:layout_alignParentRight="true" android:src="@drawable/bg_purple"/>
+    </RelativeLayout>
+
+</RelativeLayout>

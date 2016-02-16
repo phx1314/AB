@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="fill_parent" android:layout_height="fill_parent">
+
+    <com.mdx.framework.widget.MViewPager android:id="@+id/mViewPager" android:layout_width="fill_parent" android:layout_height="fill_parent"/>
+
+    <LinearLayout android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_alignParentBottom="true" android:layout_marginBottom="@dimen/j15dp" android:gravity="center_horizontal" android:orientation="vertical" android:paddingLeft="@dimen/j20dp" android:paddingRight="@dimen/j20dp">
+
+        <TextView android:id="@+id/mTextView_num" style="@style/text_style_15_white" android:layout_width="fill_parent" android:layout_height="wrap_content" android:gravity="center" android:text="5/8" android:textColor="#ffffff"/>
+
+        <TextView android:id="@+id/mTextView_del" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/j15dp" android:background="@drawable/shape_red" android:gravity="center" android:padding="@dimen/j10dp" android:text="删除" android:textColor="#ffffff"/>
+
+        <TextView android:id="@+id/mTextView_cancel" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginBottom="@dimen/j15dp" android:layout_marginTop="@dimen/j15dp" android:background="@drawable/shape_gray" android:gravity="center" android:padding="@dimen/j10dp" android:text="取消" android:textColor="#000000"/>
+    </LinearLayout>
+
+</RelativeLayout>
