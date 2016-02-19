@@ -117,6 +117,16 @@ public class FrgPay extends BaseFrg implements Callback, Runnable,
 		loaddata();
 	}
 
+	@Override
+	public void disposeMsg(int type, Object obj) {
+		switch (type) {
+		case 0:
+			FrgPay.this.finish();
+			Frame.HANDLES.sentAll("FrgZh", 010, "");
+			break;
+		}
+	}
+
 	private void initView() {
 		mLinearLayout_youhui = (LinearLayout) findViewById(R.id.mLinearLayout_youhui);
 		mTextView_name = (TextView) findViewById(R.id.mTextView_name);
@@ -521,6 +531,7 @@ public class FrgPay extends BaseFrg implements Callback, Runnable,
 
 	public void MFinishPay(Son s) {
 		Helper.toast("支付成功", getContext());
+		Frame.HANDLES.sentAll("FrgZh", 010, "");
 		FrgPay.this.finish();
 	}
 
@@ -674,7 +685,7 @@ public class FrgPay extends BaseFrg implements Callback, Runnable,
 							Toast.makeText(getContext(), "支付成功",
 									Toast.LENGTH_SHORT).show();
 							FrgPay.this.finish();
-							Frame.HANDLES.sentAll("ConfirmOrderAct", 1001, "");
+							Frame.HANDLES.sentAll("FrgZh", 010, "");
 						} else
 							Toast.makeText(getContext(), "支付失败",
 									Toast.LENGTH_SHORT).show();

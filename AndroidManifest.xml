@@ -217,6 +217,11 @@
             android:exported="false"
             android:screenOrientation="behind" >
         </activity>
+        <activity
+            android:name="com.work.xuance.wxapi.WXPayEntryActivity"
+            android:exported="true"
+            android:launchMode="singleTop" >
+        </activity>
     </application>
 
 </manifest>

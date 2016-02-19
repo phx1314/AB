@@ -3,12 +3,12 @@
 
     <declare-styleable name="FlipView">
         <attr name="orientation" format="enum">
-            <enum name="vertical" value="0"/>
-            <enum name="horizontal" value="1"/>
+            <enum name="vertical" value="0" />
+            <enum name="horizontal" value="1" />
         </attr>
         <attr name="overFlipMode" format="enum">
-            <enum name="glow" value="0"/>
-            <enum name="rubber_band" value="1"/>
+            <enum name="glow" value="0" />
+            <enum name="rubber_band" value="1" />
         </attr>
     </declare-styleable>
 
@@ -23,6 +23,15 @@
         <item name="android:singleLine">true</item>
         <item name="android:padding">3.0dip</item>
         <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="NavPage">
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">fill_parent</item>
+        <item name="android:orientation">vertical</item>
+        <item name="android:gravity">center_horizontal</item>
+        <!-- <item name="android:background">@drawable/nav_page</item> -->
+        <item name="android:background">@color/A</item>
     </style>
 
     <style name="menu_tab">

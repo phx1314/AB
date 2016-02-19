@@ -122,6 +122,7 @@ public class FrgDingdanDetail extends BaseFrg {
 			mTextView_state.setText("订单状态：待付款");
 		} else {
 			mTextView_state.setText("订单状态：已付款");
+			mTextView_fukuan.setVisibility(View.GONE);
 		}
 		mTextView_dingdanjine
 				.setText("订单金额（含运费）：￥"
