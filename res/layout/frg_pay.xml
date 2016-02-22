@@ -66,7 +66,7 @@
                     style="@style/text_style_13_black"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="￥69.0" />
+                    android:text="￥" />
             </LinearLayout>
 
             <ImageView
@@ -95,7 +95,7 @@
                     style="@style/text_style_13_black"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="￥69.0" />
+                    android:text="￥" />
             </LinearLayout>
 
             <ImageView
@@ -124,7 +124,7 @@
                     style="@style/text_style_13_black"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="￥69.0"
+                    android:text="￥"
                     android:textColor="#ef1b4d" />
             </LinearLayout>
         </LinearLayout>
@@ -161,7 +161,6 @@
                 android:background="#B3B3B3" />
 
             <LinearLayout
-                android:id="@+id/mLinearLayout_youhui"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/j24dp"
                 android:layout_marginLeft="@dimen/j32dp"
@@ -381,7 +380,7 @@
                 style="@style/text_style_13_black"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="10.00"
+                android:text=""
                 android:textColor="#ef1b4d" />
         </LinearLayout>
 
@@ -392,7 +391,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="right"
             android:layout_marginTop="@dimen/j7dp"
-            android:text="预计发货日期：2014/10/08" />
+            android:text="预计发货日期：" />
     </LinearLayout>
 
     <ImageView

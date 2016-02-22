@@ -11,6 +11,10 @@
 package com.work.xuance.frg;
 
 import java.net.URLEncoder;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Random;
@@ -552,7 +556,31 @@ public class FrgPay extends BaseFrg implements Callback, Runnable,
 			break;
 		}
 		mTextView_price.setText("￥" + mMOrderMini.price);
-		mTextView_time.setText("预计发货日期： " + mMOrderMini.time);
+		ApisFactory.getApiMSingleSysParams().load(getContext(), FrgPay.this,
+				"MSingleSysParams", "1004");
+	}
+
+	@SuppressLint("SimpleDateFormat")
+	public void MSingleSysParams(Son s) {
+		MRet mMRet = (MRet) s.getBuild();
+		java.util.Calendar Cal = java.util.Calendar.getInstance();
+		java.text.SimpleDateFormat format = new java.text.SimpleDateFormat(
+				"yyyy-MM-dd");
+		try {
+			Cal.setTime(ConverToDate(mMOrderMini.time));
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		Cal.add(Calendar.DAY_OF_MONTH, +Integer.valueOf(mMRet.msg));
+		System.out.println("date:" + format.format(Cal.getTime()));
+		mTextView_time.setText("预计发货日期： " + format.format(Cal.getTime()));
+	}
+
+	// 把字符串转为日期
+	@SuppressLint("SimpleDateFormat")
+	public static Date ConverToDate(String strDate) throws Exception {
+		DateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+		return df.parse(strDate);
 	}
 
 	@Override
