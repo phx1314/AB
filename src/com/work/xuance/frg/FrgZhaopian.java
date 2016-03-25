@@ -14,6 +14,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import okio.ByteString;
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.os.Bundle;
 import android.os.Handler;
@@ -59,14 +60,24 @@ public class FrgZhaopian extends BaseFrg {
 	public String id = "";
 	public String color = "1";
 	public boolean isCan = false;
-	public String isxiugai= "";
+	public String isxiugai = "";
+	public Handler mHandler = new Handler() {
+		@Override
+		public void handleMessage(Message msg) {
+			mProgressDialog.dismiss();
+			MFileList mModel = (MFileList) msg.obj;
+			ApisFactory.getApiMUploadFile().load(getActivity(),
+					FrgZhaopian.this, "MUploadFile1", mModel);
+		}
+	};
+	public ProgressDialog mProgressDialog;
+
 	@SuppressWarnings("unchecked")
 	@Override
 	protected void create(Bundle savedInstanceState) {
 		setContentView(R.layout.frg_zhaopian);
 		id = getActivity().getIntent().getStringExtra("id");
 		isxiugai = getActivity().getIntent().getStringExtra("isxiugai");
-		Helper.toast("图片上传中...", getContext());
 		initView();
 		loaddata();
 	}
@@ -80,7 +91,7 @@ public class FrgZhaopian extends BaseFrg {
 			mFileSon.setSubtitle(mMPhotoList.photos.get(i).subtitle);
 			mFileSons.add(mFileSon);
 		}
-		color = mMPhotoList.color;
+		mMPhotoList.color = color;
 		update();
 	}
 
@@ -106,6 +117,8 @@ public class FrgZhaopian extends BaseFrg {
 	}
 
 	private void initView() {
+		mProgressDialog = new ProgressDialog(getContext());
+		mProgressDialog.setMessage("图片上传中...");
 		flipView = (FlipView) findViewById(R.id.flipView);
 		flipView.peakNext(false);
 		flipView.setOverFlipMode(OverFlipMode.GLOW);
@@ -138,7 +151,7 @@ public class FrgZhaopian extends BaseFrg {
 		mModel2Sons.add(new Model2Son(null, null));
 		if (mAdaZhaopianYlChanggui == null) {
 			mAdaZhaopianYlChanggui = new AdaZhaopianYlChanggui(getContext(),
-					mModel2Sons, color,mFileSons.size()-1,isxiugai);
+					mModel2Sons, color, mFileSons.size() - 1, isxiugai);
 			flipView.setAdapter(mAdaZhaopianYlChanggui);
 		} else {
 			mAdaZhaopianYlChanggui.clear();
@@ -150,26 +163,34 @@ public class FrgZhaopian extends BaseFrg {
 	@SuppressWarnings("unchecked")
 	public void loaddata() {
 		if (TextUtils.isEmpty(id)) {
+			mProgressDialog.show();
 			mFileSons = (List<FileSon>) getActivity().getIntent()
 					.getSerializableExtra("data");
 			update();
-			MFileList mModel = new MFileList();
-			mModel.file.clear();
-			for (int i = 0; i < mFileSons.size(); i++) {
-				ByteString imgFile = null;
-				try {
-					imgFile = ByteString.of(F.bitmap2Byte(mFileSons.get(i)
-							.getPath(),600));
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-				MFile mMFile = new MFile(imgFile,
-						mFileSons.get(i).getPath().split("/")[mFileSons.get(i)
+			new Thread(new Runnable() {
+				@Override
+				public void run() {
+					MFileList mModel = new MFileList();
+					mModel.file.clear();
+					for (int i = 0; i < mFileSons.size(); i++) {
+						ByteString imgFile = null;
+						try {
+							imgFile = ByteString.of(F.bitmap2Byte(mFileSons
+									.get(i).getPath(), 600));
+						} catch (Exception e) {
+							e.printStackTrace();
+						}
+						MFile mMFile = new MFile(imgFile, mFileSons.get(i)
+								.getPath().split("/")[mFileSons.get(i)
 								.getPath().split("/").length - 1]);
-				mModel.file.add(mMFile);
-			}
-			ApisFactory.getApiMUploadFile().load(getActivity(),
-					FrgZhaopian.this, "MUploadFile1", mModel);
+						mMFile.fileName = "1.png";
+						mModel.file.add(mMFile);
+					}
+					Message mMessage = new Message();
+					mMessage.obj = mModel;
+					mHandler.sendMessage(mMessage);
+				}
+			}).start();
 		} else {
 			isCan = true;
 			ApisFactory.getApiMOrderDetail().load(getContext(),
@@ -183,6 +204,7 @@ public class FrgZhaopian extends BaseFrg {
 			mFileSons.get(i).setImg(mMRet.msg.split(",")[i]);
 		}
 		isCan = true;
+		Helper.toast("图片上传中成功", getContext());
 	}
 
 	@Override

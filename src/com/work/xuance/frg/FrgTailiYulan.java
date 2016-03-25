@@ -14,8 +14,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 import okio.ByteString;
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
 import android.text.TextUtils;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -40,7 +43,8 @@ import com.work.xuance.model.Model2Son;
 import com.work.xuance.model.FileFather.FileSon;
 
 public class FrgTailiYulan extends BaseFrg {
-
+	public static int size = 280;
+	public static int size2 = 220;
 	public FlipView flipView;
 	public List<FileSon> mFileSons = new ArrayList<FileFather.FileSon>();
 	public AdaTailiYulan mAdaTailiYulan;
@@ -48,13 +52,22 @@ public class FrgTailiYulan extends BaseFrg {
 	public List<Model2Son> mModel2Sons = new ArrayList<Model2Son>();
 	public String color = "1";
 	public boolean isCan = false;
+	public Handler mHandler = new Handler() {
+		@Override
+		public void handleMessage(Message msg) {
+			mProgressDialog.dismiss();
+			MFileList mModel = (MFileList) msg.obj;
+			ApisFactory.getApiMUploadFile().load(getActivity(),
+					FrgTailiYulan.this, "MUploadFile1", mModel);
+		}
+	};
+	public ProgressDialog mProgressDialog;
 
 	@SuppressWarnings("unchecked")
 	@Override
 	protected void create(Bundle savedInstanceState) {
 		setContentView(R.layout.frg_taili_yulan);
 		id = getActivity().getIntent().getStringExtra("id");
-		Helper.toast("图片上传中...", getContext());
 		initView();
 		loaddata();
 	}
@@ -77,31 +90,41 @@ public class FrgTailiYulan extends BaseFrg {
 
 	private void initView() {
 		flipView = (FlipView) findViewById(R.id.flipView);
+		mProgressDialog = new ProgressDialog(getContext());
+		mProgressDialog.setMessage("图片上传中...");
 	}
 
 	@SuppressWarnings("unchecked")
 	public void loaddata() {
 		if (TextUtils.isEmpty(id)) {
+			mProgressDialog.show();
 			mFileSons = (List<FileSon>) getActivity().getIntent()
 					.getSerializableExtra("data");
 			update();
-			MFileList mModel = new MFileList();
-			mModel.file.clear();
-			for (int i = 0; i < mFileSons.size(); i++) {
-				ByteString imgFile = null;
-				try {
-					imgFile = ByteString.of(F.bitmap2Byte(mFileSons.get(i)
-							.getPath()));
-				} catch (Exception e) {
-					e.printStackTrace();
+			new Thread(new Runnable() {
+				@Override
+				public void run() {
+					MFileList mModel = new MFileList();
+					mModel.file.clear();
+					for (int i = 0; i < mFileSons.size(); i++) {
+						ByteString imgFile = null;
+						try {
+							imgFile = ByteString.of(F.bitmap2Byte(mFileSons
+									.get(i).getPath()));
+						} catch (Exception e) {
+							e.printStackTrace();
+						}
+						MFile mMFile = new MFile(imgFile, mFileSons.get(i)
+								.getPath().split("/")[mFileSons.get(i)
+								.getPath().split("/").length - 1]);
+						mMFile.fileName = "1.png";
+						mModel.file.add(mMFile);
+					}
+					Message mMessage = new Message();
+					mMessage.obj = mModel;
+					mHandler.sendMessage(mMessage);
 				}
-				MFile mMFile = new MFile(imgFile, mFileSons.get(i)
-						.getPath().split("/")[mFileSons.get(i)
-						.getPath().split("/").length - 1]);
-				mModel.file.add(mMFile);
-			}
-			ApisFactory.getApiMUploadFile().load(getActivity(),
-					FrgTailiYulan.this, "MUploadFile1", mModel);
+			}).start();
 		} else {
 			isCan = true;
 			ApisFactory.getApiMOrderDetail().load(getContext(),
@@ -115,6 +138,7 @@ public class FrgTailiYulan extends BaseFrg {
 			mFileSons.get(i).setImg(mMRet.msg.split(",")[i]);
 		}
 		isCan = true;
+		Helper.toast("图片上传中成功", getContext());
 	}
 
 	public void MOrderDetail(Son s) {
@@ -126,7 +150,7 @@ public class FrgTailiYulan extends BaseFrg {
 			mFileSon.setSubtitle(mMPhotoList.photos.get(i).subtitle);
 			mFileSons.add(mFileSon);
 		}
-		color = mMPhotoList.color;
+		mMPhotoList.color = color;
 		update();
 	}
 
@@ -159,12 +183,11 @@ public class FrgTailiYulan extends BaseFrg {
 		if (isCan) {
 			MPhotoList mMPhotoList = new MPhotoList();
 			for (int i = 0; i < mFileSons.size(); i++) {
-				MPhoto mMPhoto = new MPhoto(i, mFileSons.get(i).img,
-						mFileSons.get(i).getTitle(), mFileSons.get(i)
-								.getSubtitle());
+				MPhoto mMPhoto = new MPhoto(i, mFileSons.get(i).img, mFileSons
+						.get(i).getTitle(), mFileSons.get(i).getSubtitle());
 				mMPhotoList.photos.add(mMPhoto);
 			}
-			color = mMPhotoList.color;
+			mMPhotoList.color = color;
 			Helper.startActivity(getActivity(), FrgXiadan.class,
 					TitleAct.class, "type", 2, "mMPhotoList", mMPhotoList);
 		} else {

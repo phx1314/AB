@@ -34,7 +34,6 @@ import com.mdx.framework.server.api.ErrorMsg;
 import com.mdx.framework.server.api.OnApiInitListener;
 import com.mdx.framework.utility.Device;
 import com.udows.common.proto.MPhotoList;
-import com.work.xuance.R;
 import com.work.xuance.instance.goReturn;
 import com.work.xuance.model.FileFather;
 import com.work.xuance.model.FileFather.FileSon;
@@ -239,12 +238,12 @@ public class F {
 			String name) {
 		if (ExistSDCard()) {
 			File destDir = new File(Environment.getExternalStorageDirectory()
-					+ "/"+pub_name);
+					+ "/" + pub_name);
 			if (!destDir.exists()) {
 				destDir.mkdirs();
 			}
 			final File f = new File(Environment.getExternalStorageDirectory()
-					+ "/"+pub_name+"/" + name + ".png");
+					+ "/" + pub_name + "/" + name + ".png");
 			new Thread() {
 				@Override
 				public void run() {
@@ -272,7 +271,46 @@ public class F {
 		}
 	}
 
+	public static void fileSuoFang(String w, String h) {
+		// File filepath = new File(CoreConstants.FILE_PATH + "/"
+		// + item.getFilePath());
+		// int width = 0, height = 0;
+		// if (w != null && w.length() > 0) {
+		// width = Integer.valueOf(w);
+		// }
+		// if (h != null && h.length() > 0) {
+		// height = Integer.valueOf(h);
+		// }
+		// if (width != 0 && item.getFileMinitype().startsWith("image")) {
+		// // 检查目录
+		// File tempDirectory = new File(CoreConstants.FILE_PATH + "/temp/");
+		// if (!tempDirectory.isDirectory()) {
+		// tempDirectory.mkdirs();
+		// }
+		//
+		// String tf = CoreConstants.FILE_PATH + "/temp/" + item.getFileMd5()
+		// + "_" + width + "x" + height + ".jpg";
+		// File tempfile = new File(tf);
+		// if (tempfile.exists()) {
+		// filepath = tempfile;
+		// } else {
+		// if (height == 0) {
+		// BufferedImage buf = ImageIO.read(filepath);
+		// if (buf.getWidth() > width) {
+		// ImageUtils.Compress(filepath, tempfile, width);
+		// filepath = tempfile;
+		// }
+		// } else {
+		// ImageUtils.Compress(filepath, tempfile, width, height);
+		// filepath = tempfile;
+		// }
+		// }
+		// }
+
+	}
+
 	public static boolean ExistSDCard() {
+
 		if (android.os.Environment.getExternalStorageState().equals(
 				android.os.Environment.MEDIA_MOUNTED)) {
 			return true;

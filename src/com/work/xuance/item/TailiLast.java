@@ -12,10 +12,15 @@ package com.work.xuance.item;
 
 import com.work.xuance.F;
 import com.work.xuance.R;
+import com.work.xuance.frg.FrgTailiYulan;
+import com.work.xuance.view.DataBtimap;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.graphics.Bitmap;
 import android.os.Environment;
+import android.os.Handler;
+import android.os.Message;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
 import android.view.View;
@@ -28,6 +33,13 @@ import android.widget.TextView;
 public class TailiLast extends BaseItem {
 	public MImageView mMImageView_top;
 	public TextView clk_mTextView_dzh;
+	public Handler mHandler = new Handler() {
+		@Override
+		public void handleMessage(Message msg) {
+			DataBtimap mDataBtimap = (DataBtimap) msg.obj;
+			mMImageView_top.setImageBitmap(mDataBtimap.getmBitmap1());
+		}
+	};
 
 	@SuppressLint("InflateParams")
 	public static View getView(Context context, ViewGroup parent) {
@@ -52,15 +64,27 @@ public class TailiLast extends BaseItem {
 
 		clk_mTextView_dzh.setOnClickListener(com.mdx.framework.utility.Helper
 				.delayClickLitener(this));
-		try {
-			mMImageView_top.setImageBitmap(com.mdx.framework.utility.BitmapRead
-					.decodeSampledBitmapFromFile(
-							Environment.getExternalStorageDirectory() + "/"
-									+ F.pub_name + "/"
-									+ F.mMPhotoList.photos.get(1).img + ".png",
-							320, 0));
-		} catch (Exception e) {
-		}
+		new Thread(new Runnable() {
+			@Override
+			public void run() {
+				try {
+					Bitmap mBitmap1 = com.mdx.framework.utility.BitmapRead
+							.decodeSampledBitmapFromFile(
+									Environment.getExternalStorageDirectory()
+											+ "/" + F.pub_name + "/"
+											+ F.mMPhotoList.photos.get(1).img
+											+ ".png", FrgTailiYulan.size, 0);
+
+					DataBtimap mDataBtimap = new DataBtimap(mBitmap1, null,
+							null);
+					Message mMessage = new Message();
+					mMessage.obj = mDataBtimap;
+					mHandler.sendMessage(mMessage);
+				} catch (Exception e) {
+				}
+			}
+		}).start();
+
 	}
 
 	public void set(String item) {

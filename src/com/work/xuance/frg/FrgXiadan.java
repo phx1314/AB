@@ -13,6 +13,7 @@ package com.work.xuance.frg;
 import android.app.Dialog;
 import android.content.Context;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.EditText;
@@ -132,6 +133,7 @@ public class FrgXiadan extends BaseFrg implements
 						.equals("")) {
 					Helper.toast("请输入详细地址", getContext());
 				} else {
+					Log.i("color", mMPhotoList.color + "");
 					ApisFactory.getApiMPostPhotoOrder().load(
 							getContext(),
 							FrgXiadan.this,

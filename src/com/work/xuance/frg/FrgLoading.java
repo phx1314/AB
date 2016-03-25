@@ -27,6 +27,7 @@ import com.work.xuance.F;
 import com.work.xuance.R;
 
 public class FrgLoading extends BaseFrg {
+	private final static int CWJ_HEAP_SIZE = 6 * 1024 * 1024;
 	public ProgressDialog mProgressDialog;
 	public Handler mHandler = new Handler() {
 		@Override
